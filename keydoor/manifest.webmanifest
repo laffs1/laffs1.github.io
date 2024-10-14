@@ -1,0 +1,84 @@
+{
+  "name": "Key & Door Template",
+  "short_name": "Key & Door Template",
+  "id": "com.firith.studio.duck",
+  "description": "An epic Duck platformer all about finding a key and escaping.",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": [{
+        "src": "1b777385a8253e73060395f484a7c5c2b94060d6d4e852f2d09e2ce165a9d152-ios-icon-20.png",
+        "sizes": "20x20"
+      },{
+        "src": "99b901a554a3b159c3bc29d1fbf2635e3ab12c780ec42b485c5779b4dc6c8c7e-ios-icon-29.png",
+        "sizes": "29x29"
+      },{
+        "src": "d33fdcf3069dbcaa3746a97e2a33497dc33da30211802ce0cdeab629859bef64-android-icon-36.png",
+        "sizes": "36x36"
+      },{
+        "src": "41706aa57b241db41a3016c6648fa7ef75cc856841504909aca4c139e396d30f-ios-icon-40.png",
+        "sizes": "40x40"
+      },{
+        "src": "20774f6d2bc6e43f5e2c59f1633f5c357bf3d2734f6974943e2495b14b1d80b1-android-icon-48.png",
+        "sizes": "48x48"
+      },{
+        "src": "3451789a197a1b75e11678c692fc8081d74fac14649f95d68c70ce18861bb60b-ios-icon-50.png",
+        "sizes": "50x50"
+      },{
+        "src": "95e7ca22ba6970d89bc5b7e43c96bd0227fcb94ee55e2150fae5bd74cb7f32bd-ios-icon-57.png",
+        "sizes": "57x57"
+      },{
+        "src": "e7a10bb2488e4a177de1dc4e75754908acd8342d196b6ae0dc068a22e40c0bc7-ios-icon-58.png",
+        "sizes": "58x58"
+      },{
+        "src": "5f86be595638b2d9eed2aae8b0c9b6033b615798b6677021b778b6ae163c6860-ios-icon-60.png",
+        "sizes": "60x60"
+      },{
+        "src": "bd3c0099b36921be30d7ec856abad788deb8c10ae88ae29fe62e6827154b6125-android-icon-72.png",
+        "sizes": "72x72"
+      },{
+        "src": "171eb3d5fa1c20844baa3f7e4cf9fb93a130f3c828ac4f8108b94960a0486c67-ios-icon-76.png",
+        "sizes": "76x76"
+      },{
+        "src": "780178bc232d0f6c0a795fd0016db053c79ca2c29cf1e40dc29f6baad085d522-ios-icon-80.png",
+        "sizes": "80x80"
+      },{
+        "src": "b0e46960687862606c1cb01045b9c2f72dd7c2598a0b88c24ee35d6178c6d1c2-ios-icon-87.png",
+        "sizes": "87x87"
+      },{
+        "src": "87acac3fb2a0a494c5b6c5e2fce7252e45b5c27d22acea5791158bc21706d46e-android-icon-96.png",
+        "sizes": "96x96"
+      },{
+        "src": "dc8d13d6053eced1a15edb0e8569a6da728c006aa8ba069e0c17220c3d363f4c-ios-icon-100.png",
+        "sizes": "100x100"
+      },{
+        "src": "d1f6d5fd7e32ffb607b182e881ed292a5c1ee6f8a7f584dd798c4b1255d03598-ios-icon-114.png",
+        "sizes": "114x114"
+      },{
+        "src": "7ed8b8580932691e48165df9f96af6fde52ff6afea267faa9d02b1f226257b4b-ios-icon-120.png",
+        "sizes": "120x120"
+      },{
+        "src": "a2442115a4ad3b854396bf0a1d72b6c01ec1471dbf49a62cfbad1eff53cc1114-android-icon-144.png",
+        "sizes": "144x144"
+      },{
+        "src": "1f71907ae0d9f0fb2db098e46534fd46f64ab2f985a32a5e09acbea8deab20cd-ios-icon-152.png",
+        "sizes": "152x152"
+      },{
+        "src": "3abd546f49388680fa952683923fee2f31ce2f7cd8a0cb9a8644c6c44173705d-ios-icon-167.png",
+        "sizes": "167x167"
+      },{
+        "src": "e50c1dd0117d4bfae75a6297e08083911d4b796b0106af8ddfea27ea97f2c0ff-ios-icon-180.png",
+        "sizes": "180x180"
+      },{
+        "src": "2ad6a55650e3b723f841b9c8d88f4db0117fab873651b0584d98c61c8072fe8b-android-icon-192.png",
+        "sizes": "192x192"
+      },{
+        "src": "1400b94075f9c83d249530efc0980c26642ed1a074ad58fac766f6579fac1051-desktop-icon-512.png",
+        "sizes": "512x512"
+      },{
+        "src": "449d869b1bc04cfcf963958b9d4ee45cde056a1e8a95d8e4f3585ff513f9fefb-ios-icon-1024.png",
+        "sizes": "1024x1024"
+      }]
+}
