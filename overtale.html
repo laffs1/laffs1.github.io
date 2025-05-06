@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overtale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ffffff;
+      text-shadow: 0 0 5px #ffffff, 0 0 20px red;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 0.7em;
+      line-height: 1.6;
+      color: #bbbbbb;
+      text-shadow: 0 0 5px #ff0000;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      font-size: 0.9em;
+      padding: 10px 20px;
+      color: #000;
+      background-color: #ffffff;
+      border: 2px solid #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px white;
+    }
+
+    .btn:hover {
+      background-color: #ff0000;
+      color: white;
+      box-shadow: 0 0 20px red;
+    }
+
+    #rickroll {
+      display: none;
+      margin-top: 20px;
+    }
+
+    iframe {
+      border: none;
+      width: 300px;
+      height: 170px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.5em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>OVERTALE</h1>
+  <p>
+    You tripped into a world of sarcasm, spaghetti, and legally questionable knock-offs.<br>
+    Will you mock, meme, or survive?
+  </p>
+  <button class="btn" onclick="rickroll()">Start Game</button>
+
+  <div id="rickroll">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" allow="autoplay"></iframe>
+  </div>
+
+  <footer>© 2025 Overtale Studios. Definitely not affiliated with anyone important.</footer>
+
+  <script>
+    function rickroll() {
+      document.getElementById('rickroll').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
