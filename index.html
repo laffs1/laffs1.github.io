@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Letter Shuffle</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      user-select: none;
+      cursor: pointer;
+    }
+    .row {
+      font-size: 3rem;
+      letter-spacing: 0.3em;
+      margin: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="row" id="row1">AAAAAAAAAAAAAAAA</div>
+  <div class="row" id="row2">AAAAAAAAAAAAAAAA</div>
+
+  <script>
+    const row1 = document.getElementById('row1');
+    const row2 = document.getElementById('row2');
+    const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const LENGTH = 16;
+    let running = true;
+
+    function getRandomLetters(length) {
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        result += LETTERS[Math.floor(Math.random() * LETTERS.length)];
+      }
+      return result;
+    }
+
+    function shuffle() {
+      if (!running) return;
+      row1.textContent = getRandomLetters(LENGTH);
+      row2.textContent = getRandomLetters(LENGTH);
+      requestAnimationFrame(shuffle);
+    }
+
+    document.addEventListener('click', () => {
+      running = false;
+    });
+
+    document.addEventListener('touchstart', () => {
+      running = false;
+    });
+
+    shuffle(); // start animation
+  </script>
+</body>
+</html>
