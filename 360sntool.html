@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xbox 360 Serial Decoder</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #1c1c1c;
+      color: #e0e0e0;
+      padding: 2rem;
+    }
+    input, button {
+      padding: 0.6rem;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 6px;
+    }
+    input {
+      width: 300px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 1.5rem;
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 6px;
+      white-space: pre-wrap;
+    }
+    h2 {
+      color: #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <h2>Xbox 360 Serial Number Decoder</h2>
+  <label>Enter Xbox 360 Serial Number:</label><br>
+  <input id="serial" type="text" maxlength="12" placeholder="Example: 123830070702">
+  <br>
+  <button onclick="decode()">Decode</button>
+  <div id="output"></div>
+
+  <script>
+    function decode() {
+      const serial = document.getElementById("serial").value.trim();
+      const output = document.getElementById("output");
+
+      if (serial.length < 12) {
+        output.textContent = "❌ Serial number must be at least 12 characters.";
+        return;
+      }
+
+      const yearDigit = serial.charAt(serial.length - 5);
+      const weekStr = serial.substring(serial.length - 4, serial.length - 2);
+      const regionCode = serial.substring(serial.length - 2);
+      const week = parseInt(weekStr);
+      const yearMap = {
+        '5': 2005, '6': 2006, '7': 2007, '8': 2008, '9': 2009,
+        '0': 2010, '1': 2011, '2': 2012, '3': 2013, '4': 2014
+      };
+      let year = yearMap[yearDigit];
+      if (!year && yearDigit === '5' && week < 20) year = 2015;
+
+      const regions = {
+        '02': 'Mexico',
+        '03': 'Hungary',
+        '05': 'China',
+        '06': 'Taiwan',
+        '07': 'China',
+        '01': 'Unknown',
+        '04': 'Unknown',
+        '08': 'Unknown'
+      };
+      const region = regions[regionCode] || "Unknown";
+
+      let gpuStatus = "Unknown";
+      if (year === 2008 && week < 12) gpuStatus = "Bad GPU";
+      else if (year === 2008 && week === 12) gpuStatus = "GPU probably bad";
+      else if (year === 2008 && week === 13) gpuStatus = "50/50 GPU";
+      else if (year === 2008 && week === 14) gpuStatus = "GPU probably good";
+      else if (year === 2008 && week >= 15 && week <= 17) gpuStatus = "GPU probably good";
+      else if (year === 2008 && week >= 18) gpuStatus = "Good GPU";
+      else if (year > 2008) gpuStatus = "Good GPU";
+
+      if (year === 2014 && week >= 31 && week < 36) gpuStatus += " — Possible Winchester";
+      if (year === 2014 && week >= 36) gpuStatus += " — Definite Winchester";
+      if (year === 2015) gpuStatus += " — Definite Winchester";
+
+      let board = "Unknown";
+
+      if (year === 2005) board = "Xenon";
+      else if (year === 2006) board = "Xenon or Zephyr (Zephyr has HDMI)";
+      else if (year === 2007) board = "Xenon, Zephyr, or Falcon (late 2007)";
+      else if (year === 2008) {
+        board = "Xenon, Zephyr, or Falcon";
+        if (week >= 40) board += ", possibly Jasper";
+      } else if (year === 2009 || year === 2010) {
+        board = "100% Jasper";
+        if (year === 2010) board += " (Phat: Jasper, Slim: Trinity)";
+      } else if (year === 2011) {
+        board = "Slim: Trinity";
+      } else if (year === 2012) {
+        board = "Slim: Corona";
+        if (week >= 40) board += " (Postfix likely needed)";
+      } else if (year === 2013) {
+        board = "Corona (Postfix definitely needed)";
+      } else if (year === 2014) {
+        if (gpuStatus.includes("Winchester")) {
+          board = "Winchester";
+        } else {
+          board = "Corona (Postfix needed)";
+        }
+      } else if (year === 2015) {
+        board = "Winchester";
+      }
+
+      const manufactureDate = (year && week)
+        ? `Week ${week} of ${year}`
+        : "Unknown";
+
+      output.innerHTML = `
+🔢 Serial: <b>${serial}</b>
+📅 Manufacture: <b>${manufactureDate}</b>
+🌍 Region: <b>${region}</b>
+🧠 GPU Quality: <b>${gpuStatus}</b>
+📦 Motherboard: <b>${board}</b>
+      `;
+    }
+  </script>
+</body>
+</html>
